@@ -1,0 +1,11 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - IMAGE_PATH=/app/image_bw.png
+    volumes:
+      - ./image.png:/app/image_bw.png
