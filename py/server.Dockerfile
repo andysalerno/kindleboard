@@ -27,10 +27,6 @@ RUN uv sync --frozen --no-dev
 # Copy application code
 COPY server.py ./
 
-# RUN useradd --create-home --shell /bin/bash app && \
-#     chown -R app:app /app
-# USER app
-
 # Expose the port the app runs on
 EXPOSE 8000
 

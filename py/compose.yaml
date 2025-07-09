@@ -6,6 +6,18 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - IMAGE_PATH=/app/image_bw.png
+      - IMAGE_PATH=/app/image_drop/image_bw.png
     volumes:
-      - ./image.png:/app/image_bw.png
+      - image_drop:/app/image_drop
+  imagedrop:
+    build:
+      context: .
+      dockerfile: scraper.Dockerfile
+    environment:
+      - OUTPUT_PATH=/app/image_drop/image.png
+      - UPDATE_SECONDS=60
+      - URL=https://news.ycombinator.com/
+    volumes:
+      - image_drop:/app/image_drop
+volumes:
+  image_drop:
