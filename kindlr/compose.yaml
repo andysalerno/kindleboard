@@ -1,0 +1,11 @@
+services:
+  builder:
+    # image: messense/rust-musl-cross:arm-musleabi
+    image: messense/rust-musl-cross:armv7-musleabi
+    volumes:
+      - ./drop:/home/rust/drop
+      - .:/home/rust/src
+    environment:
+      - CARGO_TARGET_DIR=/home/rust/drop
+    command: cargo build --release
+    
