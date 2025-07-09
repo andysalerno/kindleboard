@@ -5,13 +5,18 @@ import os
 import time
 
 OUTPUT_PATH = os.environ.get("OUTPUT_PATH", "screenshot.png")
-URL: str | None = os.environ.get("URL")
 UPDATE_SECONDS = 60
 
-if not URL:
-    raise ValueError(
-        "The environment variable 'URL' must be set to the webpage you want to screenshot."
-    )
+
+def get_url() -> str:
+    url = os.environ.get("URL")
+
+    if not url:
+        raise ValueError(
+            "The environment variable 'URL' must be set to the webpage you want to screenshot."
+        )
+
+    return url
 
 
 def screenshot_webpage(
@@ -65,7 +70,7 @@ def main():
         while True:
             screenshot_webpage(
                 p,
-                url=URL,
+                url=get_url(),
                 viewport_width=1072,
                 viewport_height=1448,
                 output_path=OUTPUT_PATH,
