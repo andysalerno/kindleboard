@@ -4,3 +4,14 @@ _default:
 copy-script:
   cp kindle/runit.sh /Volumes/Kindle/documents/runit.sh
   echo "done"
+
+copy-binary:
+  cp drop/armv7-unknown-linux-musleabi/release/kindlr /Volumes/Kindle/documents/kindlr
+  echo "done"
+
+build:
+  docker compose up
+  docker compose down
+
+clean:
+  rm -rf ./drop/*
