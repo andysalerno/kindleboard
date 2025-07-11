@@ -7,7 +7,7 @@ import time
 OUTPUT_PATH = os.environ.get("OUTPUT_PATH", "screenshot.png")
 IMG_WIDTH = int(os.environ.get("IMG_WIDTH", 1072))
 IMG_HEIGHT = int(os.environ.get("IMG_HEIGHT", 1448))
-UPDATE_SECONDS = 60
+UPDATE_SECONDS = int(os.environ.get("SCREENSHOT_INTERVAL", 60))
 
 
 def get_url() -> str:
@@ -68,6 +68,8 @@ def screenshot_webpage(
 def main():
     from convert_img import convert_image
 
+    TMP_OUTPUT_PATH = OUTPUT_PATH.replace(".png", "_tmp.png")
+
     with sync_playwright() as p:
         while True:
             screenshot_webpage(
@@ -75,16 +77,14 @@ def main():
                 url=get_url(),
                 viewport_width=IMG_WIDTH,
                 viewport_height=IMG_HEIGHT,
-                output_path=OUTPUT_PATH,
+                output_path=TMP_OUTPUT_PATH,
                 device_scale_factor=1.0,
             )
 
             print("Converting image to black and white...")
-            bw_path = OUTPUT_PATH.replace(".png", "_bw.png")
-            convert_image(OUTPUT_PATH, bw_path)
-            print(f"...Done. Wrote black and white image to: {bw_path}")
+            convert_image(TMP_OUTPUT_PATH, OUTPUT_PATH)
+            print(f"...Done. Wrote black and white image to: {OUTPUT_PATH}")
 
-            # sleep:
             print(
                 f"Waiting {UPDATE_SECONDS} seconds before taking another screenshot..."
             )

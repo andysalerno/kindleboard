@@ -4,20 +4,18 @@ services:
       context: ../kindledash
     ports:
       - "8001:8080"
-  server:
+  screenshot-server:
     build:
-      context: .
-      dockerfile: server.Dockerfile
+      context: ./screenshot-server
     ports:
       - "8000:8000"
     environment:
-      - IMAGE_PATH=/app/image_drop/image_bw.png
+      - IMAGE_PATH=/app/image_drop/image.png
     volumes:
       - image_drop:/app/image_drop
-  imagedrop:
+  screenshot-taker:
     build:
-      context: .
-      dockerfile: scraper.Dockerfile
+      context: ./screenshot-taker
     environment:
       - OUTPUT_PATH=/app/image_drop/image.png
       - UPDATE_SECONDS=60

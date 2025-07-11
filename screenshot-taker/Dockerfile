@@ -30,8 +30,10 @@ COPY screenshot_webpage.py convert_img.py ./
 
 # Set default environment variables
 ENV OUTPUT_PATH=screenshot.png
-ENV UPDATE_SECONDS=60
+ENV SCREENSHOT_INTERVAL=60
 ENV URL=
+ENV IMG_WIDTH=1072
+ENV IMG_HEIGHT=1448
 
 # Run the screenshot script
 CMD ["uv", "run", "python", "screenshot_webpage.py"]

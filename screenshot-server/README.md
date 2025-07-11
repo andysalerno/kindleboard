@@ -1,0 +1,1 @@
+Serves a screenshot as an image at a path: /image.

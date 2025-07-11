@@ -1,12 +1,9 @@
 [project]
 name = "kindlething"
 version = "0.1.0"
-description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "fastapi>=0.116.0",
-    "pillow>=11.3.0",
-    "playwright>=1.53.0",
     "uvicorn>=0.35.0",
 ]

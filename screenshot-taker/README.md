@@ -1,0 +1,1 @@
+Takes a screenshot of a given webpage with a given resolution and writes it to a given png path.
