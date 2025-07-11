@@ -6,7 +6,7 @@ import time
 
 OUTPUT_PATH = os.environ.get("OUTPUT_PATH", "screenshot.png")
 IMG_WIDTH = int(os.environ.get("IMG_WIDTH", 1072))
-IMG_HEIGHT = int(os.environ.get("IMG_WIDTH", 1448))
+IMG_HEIGHT = int(os.environ.get("IMG_HEIGHT", 1448))
 UPDATE_SECONDS = 60
 
 
