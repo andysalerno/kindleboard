@@ -1,0 +1,235 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.4;
+    font-size: 16px;
+    overflow: hidden;
+    /* Prevent scrolling */
+    width: 1072px;
+    height: 1448px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.datetime {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* Main content grid */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    max-height: 1200px;
+}
+
+/* Card styles */
+.card {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    padding: 20px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 250px;
+}
+
+.card h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 8px;
+}
+
+/* Weather card */
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.temperature {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.condition {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.humidity {
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Quote card */
+.quote-card {
+    text-align: center;
+    justify-content: center;
+}
+
+#quote {
+    font-size: 18px;
+    font-style: italic;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+#author {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* News card */
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-list li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.news-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Calendar card */
+.schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.event:last-child {
+    border-bottom: none;
+}
+
+.time {
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 80px;
+}
+
+.title {
+    flex: 1;
+    text-align: right;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    border-top: 1px solid #000000;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* Ensure no scrolling and proper fitting */
+html,
+body {
+    overflow: hidden;
+    width: 1072px;
+    height: 1448px;
+}
+
+/* Media query for exact Kindle dimensions */
+@media screen and (max-width: 1072px) and (max-height: 1448px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    .card {
+        padding: 15px;
+        min-height: 200px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .temperature {
+        font-size: 36px;
+    }
+}

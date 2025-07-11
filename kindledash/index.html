@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindle Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Kindle Dashboard</h1>
+            <div class="datetime" id="datetime"></div>
+        </header>
+
+        <main>
+            <div class="grid">
+                <div class="card weather-card">
+                    <h2>Weather</h2>
+                    <div class="weather-info">
+                        <div class="temperature">72°F</div>
+                        <div class="condition">Partly Cloudy</div>
+                        <div class="humidity">Humidity: 65%</div>
+                    </div>
+                </div>
+
+                <div class="card quote-card">
+                    <h2>Quote of the Day</h2>
+                    <blockquote id="quote">
+                        "The only way to do great work is to love what you do."
+                    </blockquote>
+                    <cite id="author">- Steve Jobs</cite>
+                </div>
+
+                <div class="card news-card">
+                    <h2>Quick News</h2>
+                    <ul class="news-list">
+                        <li>Technology advances continue to shape our world</li>
+                        <li>New discoveries in renewable energy</li>
+                        <li>Space exploration reaches new milestones</li>
+                    </ul>
+                </div>
+
+                <div class="card calendar-card">
+                    <h2>Today's Schedule</h2>
+                    <div class="schedule">
+                        <div class="event">
+                            <span class="time">9:00 AM</span>
+                            <span class="title">Morning Reading</span>
+                        </div>
+                        <div class="event">
+                            <span class="time">2:00 PM</span>
+                            <span class="title">Afternoon Walk</span>
+                        </div>
+                        <div class="event">
+                            <span class="time">7:00 PM</span>
+                            <span class="title">Evening Relaxation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Optimized for Kindle E-ink Display</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
