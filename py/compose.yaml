@@ -1,4 +1,9 @@
 services:
+  dash:
+    build:
+      context: ../kindledash
+    ports:
+      - "8001:8080"
   server:
     build:
       context: .
