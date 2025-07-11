@@ -17,6 +17,8 @@ services:
       - OUTPUT_PATH=/app/image_drop/image.png
       - UPDATE_SECONDS=60
       - URL=https://news.ycombinator.com/
+      - IMG_WIDTH=1072
+      - IMG_HEIGHT=1448
     volumes:
       - image_drop:/app/image_drop
 volumes:

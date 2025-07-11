@@ -5,6 +5,8 @@ import os
 import time
 
 OUTPUT_PATH = os.environ.get("OUTPUT_PATH", "screenshot.png")
+IMG_WIDTH = int(os.environ.get("IMG_WIDTH", 1072))
+IMG_HEIGHT = int(os.environ.get("IMG_WIDTH", 1448))
 UPDATE_SECONDS = 60
 
 
@@ -71,8 +73,8 @@ def main():
             screenshot_webpage(
                 p,
                 url=get_url(),
-                viewport_width=1072,
-                viewport_height=1448,
+                viewport_width=IMG_WIDTH,
+                viewport_height=IMG_HEIGHT,
                 output_path=OUTPUT_PATH,
                 device_scale_factor=1.0,
             )
