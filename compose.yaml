@@ -22,6 +22,7 @@ services:
       - URL=http://dash:8080
       - IMG_WIDTH=1072
       - IMG_HEIGHT=1448
+      - SCALE_FACTOR=1.0
     volumes:
       - image_drop:/app/image_drop
 volumes:

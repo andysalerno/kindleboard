@@ -8,6 +8,7 @@ OUTPUT_PATH = os.environ.get("OUTPUT_PATH", "screenshot.png")
 IMG_WIDTH = int(os.environ.get("IMG_WIDTH", 1072))
 IMG_HEIGHT = int(os.environ.get("IMG_HEIGHT", 1448))
 UPDATE_SECONDS = int(os.environ.get("SCREENSHOT_INTERVAL", 60))
+SCALE_FACTOR = float(os.environ.get("SCALE_FACTOR", 1.0))
 
 
 def get_url() -> str:
@@ -78,11 +79,11 @@ def main():
                 viewport_width=IMG_WIDTH,
                 viewport_height=IMG_HEIGHT,
                 output_path=TMP_OUTPUT_PATH,
-                device_scale_factor=1.0,
+                device_scale_factor=SCALE_FACTOR,
             )
 
             print("Converting image to black and white...")
-            convert_image(TMP_OUTPUT_PATH, OUTPUT_PATH)
+            convert_image(TMP_OUTPUT_PATH, OUTPUT_PATH, (IMG_WIDTH, IMG_HEIGHT))
             print(f"...Done. Wrote black and white image to: {OUTPUT_PATH}")
 
             print(
